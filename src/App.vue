@@ -34,7 +34,7 @@
             sm="12"
             cols="12"
           >
-            <router-link class="links" to="/">Our Work</router-link>
+            <router-link class="links" to="/our_work">Our Work</router-link>
             <router-link class="links" to="/">lorem ipsum</router-link>
             <router-link class="links" to="/">Contact</router-link>
           </v-col>

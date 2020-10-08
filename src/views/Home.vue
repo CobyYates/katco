@@ -7,23 +7,28 @@
           height="700"
           class="px-0 mx-0"
         />
-        <v-card
-          elevation="10"
-          width="50%"
-          class="pa-5 cta mx-auto text-center"
-          tile
-          :color="$store.state.blue"
-          dark
-        >
-          <p class="mb-1 subtitle-1 font-weight-light">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          </p>
-          <v-card-actions class="my-auto">
-            <v-btn class="mx-auto">contact us</v-btn>
-          </v-card-actions>
-        </v-card>
+        <v-row>
+          <v-col class="mx-auto" cols="12" sm="10" md="8" lg="7" xl="6">
+            <v-card
+              elevation="10"
+              width="100%"
+              class="pa-5 cta mx-auto text-center"
+              tile
+              :color="$store.state.blue"
+              dark
+            >
+              <p class="mb-1 subtitle-1 font-weight-light">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut
+              </p>
+              <v-card-actions class="my-auto">
+                <v-btn class="mx-auto">contact us</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+        </v-row>
       </v-col>
     </v-row>
 
@@ -88,7 +93,9 @@
         >
           <p class="headline">Phone: (801)-647-1003</p>
           <p class="headline">Email: contact@katco.com</p>
-          <p class="headline">Address: 2624 N 1550 W Pleasant Grove, UT 84003</p>
+          <p class="headline">
+            Address: 2624 N 1550 W Pleasant Grove, UT 84003
+          </p>
         </v-card>
       </v-col>
     </v-row>
