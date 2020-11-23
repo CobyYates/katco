@@ -9,15 +9,24 @@
         xl="3"
         v-for="item in cards"
         :key="item.i"
-        @mouseenter="item.hover = true"
-        @mouseleave="item.hover = false"
       >
-        <v-img height="500" :src="`${item.image}`">
-          <v-overlay absolute :opacity="0.7" :color="`${item.color} darken-4`" v-if="item.hover === true" >
-              <div>
-                <p class="text-h5 text-center">{{ item.title }}</p>
-                <p class="text-center mx-5">{{ item.text }}</p>
-              </div>
+        <v-img
+          height="500"
+          class="cta"
+          :src="`${item.image}`"
+          @mouseenter="item.hover = true"
+          @mouseleave="item.hover = false"
+        >
+          <v-overlay
+            absolute
+            :opacity="0.7"
+            :color="`${item.color} darken-4`"
+            v-if="item.hover === true"
+          >
+            <div>
+              <p class="text-h5 text-center">{{ item.title }}</p>
+              <p class="text-center mx-5">{{ item.text }}</p>
+            </div>
           </v-overlay>
         </v-img>
       </v-col>
@@ -33,34 +42,38 @@ export default {
         {
           title: "Excavation",
           hover: false,
-          color: 'orange',
-          text: 'From digging for your new homes foundation to a new pool to complete your yard, we do it all.',
+          color: "orange",
+          text:
+            "From digging for your new homes foundation to a new pool to complete your yard, we do it all.",
           image:
             "https://images.pexels.com/photos/2058729/pexels-photo-2058729.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         },
         {
-          title: "Construction",
+          title: "Commercial / Residential Builder",
           hover: false,
-          color: 'blue',
-          text: 'Building a new home and need a contractor? We have the crew and expertise to build the home of your dreams.',
+          color: "blue",
+          text:
+            "Building a new office or home and need a contractor? We have the crew and expertise to build the home of your dreams.",
           image:
             "https://images.pexels.com/photos/209266/pexels-photo-209266.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         },
         {
-          title: "Rock Walls",
+          title: "Retaining / Landscaping Walls",
           hover: false,
-          color: 'orange',
-          text: 'Whether your backyard is too steep or you just want a better looking backyard, we can create a solution that will suit you and your yards needs. Let us help you get some started.',
+          color: "orange",
+          text:
+            "Whether your backyard is too steep or you just want a better looking backyard, we can create a solution that will suit you and your yards needs. Let us help you get some started.",
           image:
             "https://marketingplatform.vivial.net/sites/default/files/inline_images/Matthews-North-Carolina-landscaping-rock.jpg",
         },
         {
-          title: "Problem Solving",
+          title: "Concrete Polishing",
           hover: false,
-          color: 'blue',
-          text: 'Yards are not always easy to work with and they all come with different challenges. We specialize in ideating ideas to maximize your yard space to work for you.',
+          color: "blue",
+          text:
+            "From basements to commercial projects, we can make your concrete floors shine to your liking.",
           image:
-            "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "https://images.unsplash.com/photo-1563724718319-78dc40028132?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
         },
       ],
     };
@@ -68,4 +81,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.cta {
+  cursor: pointer;
+}
+</style>

@@ -7,7 +7,7 @@
       </v-row>
     <v-row >
       <v-col cols="10" sm="12" md="10" lg="11" xl="11" class="mx-auto" v-for="item in areas" :key="item.i">
-        <p class="headline text-center">County: {{ item.county }}</p>
+        <p class="headline text-center">{{ item.county }} County</p>
         <div class="d-flex justify-center flex-wrap mx-10">
           <p v-for="area in item.areas" :key="area.i" class="d-flex text-no-wrap">
             <v-icon color="orange">mdi-map-marker</v-icon>{{ area.city }}
@@ -35,13 +35,11 @@ export default {
             { city: "Lindon" },
             { city: "Mapleton" },
             { city: "Orem" },
-            { city: "Payson" },
             { city: "Pleasant Grove" },
             { city: "Provo" },
             { city: "Saratoga Springs" },
             { city: "Spanish Fork" },
             { city: "Springville" },
-            { city: "Vineyard" },
           ],
         },
         {
@@ -62,7 +60,6 @@ export default {
             { city: "South Salt Lake" },
             { city: "Taylorsville" },
             { city: "West Jordan" },
-            { city: "West Valley City" },
           ],
         },
       ],

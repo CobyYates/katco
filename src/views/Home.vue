@@ -24,7 +24,7 @@
                 nisi ut
               </p>
               <v-card-actions class="my-auto">
-                <v-btn class="mx-auto">contact us</v-btn>
+                <v-btn to="/contact" class="mx-auto">contact us</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
