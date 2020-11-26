@@ -92,7 +92,7 @@
           class="d-flex flex-column justify-center align-center mb-0"
         >
           <p class="headline">Phone: (801)-647-1003</p>
-          <p class="headline">Email: contact@katco.com</p>
+          <p class="headline">Email: contact@katcoutah.com</p>
           <p class="headline">
             Address: 2624 N 1550 W Pleasant Grove, UT 84003
           </p>

@@ -5,7 +5,7 @@
         <v-form v-model="valid" @submit.prevent="sendEmail">
           <v-row class="d-flex flex-column justify-center mt-12">
           <p class="mx-auto">Please fill out the form and we will contact you soon.</p>
-            <v-col cols="12" md="4" class="mx-auto">
+            <v-col cols="12" sm="8" md="6" lg="5" xl="4" class="mx-auto">
 
               <v-text-field
                 v-model="name"
@@ -19,7 +19,7 @@
               ></v-text-field>
             </v-col>
 
-            <v-col cols="12" md="4" class="mx-auto">
+            <v-col cols="12" sm="8" md="6" lg="5" xl="4" class="mx-auto">
               <v-text-field
                 v-model="email"
                 :rules="emailRules"
@@ -32,7 +32,7 @@
               ></v-text-field>
             </v-col>
 
-            <v-col cols="12" md="4" class="mx-auto">
+            <v-col cols="12" sm="8" md="6" lg="5" xl="4" class="mx-auto">
               <v-textarea
                 v-model="message"
                 :rules="messageRules"
@@ -51,6 +51,7 @@
         </v-form>
       </v-col>
     </v-row>
+      {{screenWidth}}
   </v-container>
 </template>
 
@@ -58,6 +59,13 @@
 import emailjs from 'emailjs-com';
 
 export default {
+  computed: {
+    screenWidth: () => {
+      var x = window.matchMedia("(max-width: 700px)")
+      console.log(x)
+      // return width
+    }
+  },
   data: () => ({
     valid: false,
     title: process.env.VUE_APP_TITLE,
