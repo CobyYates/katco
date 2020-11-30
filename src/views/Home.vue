@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <v-container fluid class="home">
     <v-row>
       <v-col class="mx-auto px-0 mx-0" xl="10" lg="10" md="12">
         <v-img
@@ -12,6 +12,7 @@
             <v-card
               elevation="10"
               width="100%"
+              max-width="80vw"
               class="pa-5 cta mx-auto text-center"
               tile
               :color="$store.state.blue"
@@ -49,20 +50,29 @@
         >
           <v-overlay absolute :opacity="0.3">
             <v-row>
-              <v-col cols="5" xl="5" class="d-flex justify-center align-center">
+              <v-col
+                cols="12"
+                sm="10"
+                md="5"
+                lg="3"
+                xl="3"
+                class="d-flex justify-center align-center mx-auto"
+              >
                 <p class="text-h1 white--text text-center">
                   <span class="font-weight-black">30</span>+ Years Experience
                 </p>
               </v-col>
-              <v-col cols="6" class="mx-auto d-flex align-center">
+              <v-col
+                cols="12"
+                sm="10"
+                md="5"
+                lg="6"
+                xl="4"
+                class="mx-auto d-flex align-center px-6"
+              >
                 <p class="mb-1 title white--text font-weight-light">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut
+                  From large commercial projects to small backyard projects, we
+                  have years of experience to deliver no matter what the size.
                 </p>
               </v-col>
             </v-row>
@@ -91,7 +101,9 @@
           height="100%"
           class="d-flex flex-column justify-center align-center mb-0"
         >
-          <p class="headline">Phone: (801)-647-1003</p>
+          <p class="headline tel">
+            Phone:<a href="tel:801-647-1003"> (801) 647-1003</a>
+          </p>
           <p class="headline">Email: contact@katcoutah.com</p>
           <p class="headline">
             Address: 2624 N 1550 W Pleasant Grove, UT 84003
@@ -99,7 +111,7 @@
         </v-card>
       </v-col>
     </v-row>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -116,7 +128,9 @@ export default {
     Areas,
   },
   data() {
-    return {};
+    return {
+      mobile: false,
+    };
   },
 };
 </script>
@@ -124,6 +138,11 @@ export default {
 <style lang="scss" scoped>
 .cta {
   margin-top: -60px;
+}
+
+.tel a {
+  text-decoration: none;
+  color: white;
 }
 
 .ex {
@@ -151,7 +170,7 @@ export default {
   background-repeat: repeat;
   background-repeat: repeat, no-repeat;
 
-  min-height: 100%;
+  min-height: 400px;
   min-width: 100%;
 }
 </style>
