@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="pa-0">
     <v-footer dark padless>
-      <v-card flat tile :color="$store.state.blue" elevation="6" class="white--text text-center" width="100%">
+      <v-card flat tile :color="$store.state.blue"  class="white--text text-center" width="100%">
         <v-card-text>
           <v-btn
             v-for="icon in icons"

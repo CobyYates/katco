@@ -10,9 +10,12 @@ export default new Vuex.Store({
       {
         img: "http://images.coberapps.com/mangus1.JPG",
         job: "Mangus",
-        subtitle: "lorem ipsum subtitle information about job",
+        title: "Mangus Home",
+        location: "Pleasant Grove, UT",
+        size: "20,000 cubic feet of dirt",
+        subtitle: "Excavation of sloped lot for a home in Pleasant Grove.",
         description:
-          "lorem ipsum description of job and what it was the job accomplished",
+          "Katco excavated the basement for the home to be built. Katco also excavated and installed sewer and water up to the house, backfilled after the walls were completed and prepped the garage and driveway.",
         type: "Basement Excavation",
         images: [
           { img: "http://images.coberapps.com/mangus2.JPG" },
@@ -29,39 +32,54 @@ export default new Vuex.Store({
       {
         img: "http://images.coberapps.com/mangus1.JPG",
         job: "Gunthers",
+        title: "Gunthers",
+        location: "Lehi, UT",
+        size: "",
         subtitle: "lorem ipsum subtitle information about job",
         description:
           "lorem ipsum description of job and what it was the job accomplished",
         type: "Sewer Line Trench",
-        images: [{ img: "" }],
+        images: [{ img: "http://images.coberapps.com/mangus1.JPG" }],
       },
       {
         img: "http://images.coberapps.com/mangus1.JPG",
         job: "Sun Belt",
+        title: "Sun Belt",
+        location: "Provo, UT",
+        size: "",
         subtitle: "lorem ipsum subtitle information about job",
         description:
           "lorem ipsum description of job and what it was the job accomplished",
         type: "Excavation for Pipe & Electrical",
-        images: [{ img: "" }],
+        images: [{ img: "http://images.coberapps.com/mangus1.JPG" }],
       },
       {
-        img: "http://images.coberapps.com/woodlandhills2.JPG",
-        job: "Woodland Hills",
+        img: "http://images.coberapps.com/woodlandhills4.jpg",
+        job: "Belliston",
+        title: "Belliston",
+        location: "Woodland Hills",
+        size: "",
         subtitle: "lorem ipsum subtitle information about job",
         description:
           "lorem ipsum description of job and what it was the job accomplished",
         type: "Rock Wall Landscaping",
-        images: [{ img: "" }],
+        images: [
+          { img: "http://images.coberapps.com/woodlandhills1.JPG" },
+          { img: "http://images.coberapps.com/woodlandhills2.JPG" },
+          { img: "http://images.coberapps.com/woodlandhills3.JPG" },
+        ],
       },
       {
         img: "http://images.coberapps.com/americanfork1.jpg",
         job: "American Fork",
+        title: "American Fork",
+        location: "American Fork",
+        size: "",
         subtitle: "lorem ipsum subtitle information about job",
         description:
           "lorem ipsum description of job and what it was the job accomplished",
         type: "Landscaping & Retaining Wall",
         images: [
-          { img: "" },
           { img: "http://images.coberapps.com/americanfork1.jpg" },
           { img: "http://images.coberapps.com/americanfork3.jpg" },
           { img: "http://images.coberapps.com/americanfork4.jpg" },
@@ -71,11 +89,14 @@ export default new Vuex.Store({
       {
         img: "http://images.coberapps.com/avenues1.JPG",
         job: "Avenues",
+        title: "Avenues",
+        location: "Salt Lake City, UT",
+        size: "",
         subtitle: "lorem ipsum subtitle information about job",
         description:
           "lorem ipsum description of job and what it was the job accomplished",
         type: "Engineered Concrete Wall",
-        images: [{ img: "" }],
+        images: [{ img: "http://images.coberapps.com/avenues1.JPG" }],
       },
     ],
   },

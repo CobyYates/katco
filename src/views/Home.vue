@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="home">
+  <v-container fluid class="home py-0 px-0">
     <v-row>
       <v-col class="mx-auto px-0 mx-0" xl="10" lg="10" md="12">
         <v-img
@@ -15,14 +15,11 @@
               max-width="80vw"
               class="pa-5 cta mx-auto text-center"
               tile
-              :color="$store.state.blue"
               dark
+              :color="$store.state.blue"
             >
               <p class="mb-1 subtitle-1 font-weight-light">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut
+                We are a family owned business with years of experience. From commercial to residential, big or small we can do it. Let us help you with your construction and excavation projects.
               </p>
               <v-card-actions class="my-auto">
                 <v-btn to="/contact" class="mx-auto">contact us</v-btn>
@@ -72,7 +69,10 @@
               >
                 <p class="mb-1 title white--text font-weight-light">
                   From large commercial projects to small backyard projects, we
-                  have years of experience to deliver no matter what the size.
+                  have years of experience to deliver no matter what the size. 
+                  We have done it all, from building schools and homes, to 
+                  small yard projects like landscape walls and concrete floor
+                  polishing. We take pride in our work and love what we do.
                 </p>
               </v-col>
             </v-row>
@@ -89,7 +89,7 @@
 
     <v-row class="mt-12">
       <v-col cols="12" sm="12" md="6" class="px-0 pb-0">
-        <Location />
+        <Location class="py-0" />
       </v-col>
       <v-col cols="12" sm="12" md="6" class="px-0 pb-0">
         <v-card

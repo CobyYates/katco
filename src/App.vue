@@ -1,38 +1,37 @@
 <template>
   <v-app>
     <template>
-          <v-app-bar-nav-icon
-            class="ham"
-            v-if="mobile == true"
-            @click.stop="drawer = !drawer"
-          ></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        class="ham"
+        v-if="mobile == true"
+        @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
 
-        <v-navigation-drawer v-model="drawer" absolute temporary color="blue">
-          <v-list dark nav dense>
-            <v-list-item-group
-              v-model="group"
-              active-class="white--text text--accent-4"
-            >
-              <v-list-item dark to="/our_work">
-                <v-list-item-title>Our Work</v-list-item-title>
-              </v-list-item>
+      <v-navigation-drawer v-model="drawer" absolute temporary color="blue">
+        <v-list dark nav dense>
+          <v-list-item-group
+            v-model="group"
+            active-class="white--text text--accent-4"
+          >
+            <v-list-item dark to="/work">
+              <v-list-item-title>Our Work</v-list-item-title>
+            </v-list-item>
 
-              <v-divider />
+            <v-divider />
 
-              <v-list-item dark to="/contact">
-                <v-list-item-title >Contact</v-list-item-title>
-              </v-list-item>
+            <v-list-item dark to="/contact">
+              <v-list-item-title>Contact</v-list-item-title>
+            </v-list-item>
 
-              <v-divier />
-              <v-spacer />
+            <v-divider />
+            <v-spacer />
 
-              <a href="tel:801-647-1003" class="tel mx-5"
+            <a href="tel:801-647-1003" class="tel mx-5"
               ><v-btn dark width="80%">(801) 647-1003</v-btn></a
             >
-
-            </v-list-item-group>
-          </v-list>
-        </v-navigation-drawer>
+          </v-list-item-group>
+        </v-list>
+      </v-navigation-drawer>
     </template>
     <v-row class="nav">
       <v-col class="mx-auto" xl="10" lg="10" md="12" sm="12" cols="12">
@@ -53,7 +52,9 @@
               @click="home"
               src="./assets/Katco Logo.png"
             />
-            <p v-if="mobile == false" class="my-auto">UTAH COUNTY CONSTRUCTION CONTRACTOR</p>
+            <p v-if="mobile == false" class="my-auto">
+              UTAH COUNTY CONSTRUCTION CONTRACTOR
+            </p>
           </v-col>
           <v-spacer />
           <v-col
@@ -67,7 +68,7 @@
             <router-link
               v-if="mobile === false"
               class="links mx-5"
-              to="/our_work"
+              to="/work"
               >Our Work</router-link
             >
             <router-link
@@ -84,13 +85,14 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col class="d-flex pb-0 px-0">
+      <v-col class="d-flex pb-0">
         <v-main>
           <router-view />
         </v-main>
       </v-col>
     </v-row>
-    <Footer />
+
+    <Footer  />
   </v-app>
 </template>
 
@@ -125,7 +127,7 @@ export default {
     window.addEventListener("resize", this.myEventHandler);
   },
   mounted() {
-    window.innerWidth < 960 ? this.mobile = true : this.mobile = false
+    window.innerWidth < 960 ? (this.mobile = true) : (this.mobile = false);
   },
   destroyed() {
     window.removeEventListener("resize", this.myEventHandler);
