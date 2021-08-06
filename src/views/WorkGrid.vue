@@ -1,14 +1,28 @@
 <template>
-  <v-container fluid>
+  <v-container fluid class="pt-0">
     <v-row>
-      <v-col class="pt-0 mb-12">
-        <v-parallax
-          class="parralax mx-auto"
+      <v-col class="pt-0 mb-12 px-0">
+        <v-img
+          class="parralax mx-0 px-0"
+          height="50vh"
+          min-width="100vw"
           src="https://images.pexels.com/photos/912124/pexels-photo-912124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         >
-          <v-overlay absolute color="#3f78af">
+          <v-overlay absolute color="grey">
+            <v-row
+              class="fill-height flex-column justify-center align-center"
+            >
+              <h2 class="display-4 font-weight-bold carouselHeader">
+                Our Work
+              </h2>
+            </v-row>
           </v-overlay>
-        </v-parallax>
+        </v-img>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col class="d-flex justify-center">
+        <h2 class="display-1 mb-12">SELECT PROJECT TO VIEW</h2>
       </v-col>
     </v-row>
     <v-row class="mx-auto img-gallery">
@@ -106,5 +120,15 @@ export default {
 .hero {
   height: 600px !important;
   padding-top: 200px !important;
+}
+
+.carouselHeader {
+  color: #0094b7;
+  text-shadow: 3px 3px 3px #0000004d;
+}
+
+.carouselSubheader {
+  color: #3a3a3a;
+  text-shadow: 3px 3px 3px #0000004d;
 }
 </style>

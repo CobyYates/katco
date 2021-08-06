@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>Katco Construction</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
   </head>
@@ -14,6 +14,24 @@
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Construction Company",
+        "name": "Katco Construction",
+        "description": "A Utah based construction company specializing in commercial and residencial construction in Salt Lake County and Utah County. ",
+        "openingHours": "Mo-Fr 08:00-17:00",
+        "telephone": "+8016471003",
+        "email": "kary@katcoutah.com"
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2624 N 1550 W",
+          "addressLocality": "Pleasant Grove",
+          "addressRegion": "UT"
+        },
+        "image": "http://katcoutah.com/logo.png"
+      }
+    </script>
     <!-- built files will be auto injected -->
   </body>
 </html>

@@ -44,7 +44,7 @@
                 required
               ></v-textarea>
             </v-col>
-            <v-btn type="submit" color="blue" dark width="250" class="mx-auto"
+            <v-btn type="submit" :color="$store.state.blue" dark width="250" class="mx-auto"
               >Submit</v-btn
             >
           </v-row>

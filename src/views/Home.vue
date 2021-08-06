@@ -1,34 +1,56 @@
 <template>
   <v-container fluid class="home py-0 px-0">
-    <v-row>
-      <v-col class="mx-auto px-0 mx-0" xl="10" lg="10" md="12">
-        <v-img
-          src="https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          height="700"
-          class="px-0 mx-0"
-        />
-        <v-row>
-          <v-col class="mx-auto" cols="12" sm="10" md="8" lg="7" xl="6">
-            <v-card
-              elevation="10"
-              width="100%"
-              max-width="80vw"
-              class="pa-5 cta mx-auto text-center"
-              tile
-              dark
-              :color="$store.state.blue"
+    <v-row class="mt-0">
+      <v-col class="mx-auto px-0 mx-0 pt-0" sm="12">
+        <v-carousel
+          continuous
+          cycle
+          class="pt-0 mt-0"
+          height="90vh"
+          v-model="model"
+        >
+          <v-carousel-item v-for="item in images" :key="item">
+            <v-img
+              :src="`${item.image}`"
+              :style="`opacity: ${item.opacity}`"
+              class="text-center"
+              height="90vh"
             >
-              <p class="mb-1 subtitle-1 font-weight-light">
-                We are a family owned business with years of experience. From commercial to residential, big or small we can do it. Let us help you with your construction and excavation projects.
-              </p>
-              <v-card-actions class="my-auto">
-                <v-btn to="/contact" class="mx-auto">contact us</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-        </v-row>
+              <v-overlay
+                absolute
+                :opacity="item.overlay"
+                value="true"
+                color="white"
+              >
+                <v-row
+                  class="fill-height flex-column justify-center align-center"
+                >
+                  <h2 class="display-4 font-weight-bold carouselHeader">
+                    {{ item.title }}
+                  </h2>
+                  <h3
+                    :class="
+                      `display-2 font-weight-bold carouselSubheader ${item.subcolor}--text`
+                    "
+                  >
+                    {{ item.subtitle }}
+                  </h3>
+                  <v-btn
+                    :color="$store.state.blue"
+                    class="mt-12"
+                    to="/work"
+                    elevation="8"
+                    x-large
+                    >View Projects</v-btn
+                  >
+                </v-row>
+              </v-overlay>
+            </v-img>
+          </v-carousel-item>
+        </v-carousel>
       </v-col>
     </v-row>
+
 
     <v-row>
       <v-col cols="10" class="mx-auto px-0">
@@ -36,79 +58,46 @@
       </v-col>
     </v-row>
 
-    <v-row class="mt-12 align-center">
-      <v-col>
-        <v-card
-          height="300"
-          class="mx-0 ex d-flex"
-          tile
-          flat
-          :color="$store.state.blue"
+    <div class="blueprint">
+      <v-row class="contain mx-auto py-12">
+        <v-col cols="12" sm="" md="" lg="6" class="">
+          <v-img
+            class=""
+            src="http://images.coberapps.com/woodlandhills4.jpg"
+            :aspect-ratio="8 / 7"
+          />
+        </v-col>
+        <v-col
+          cols="12"
+          sm=""
+          md=""
+          lg="6"
+          class="pa-0 d-flex align-space-between"
         >
-          <v-overlay absolute :opacity="0.3">
-            <v-row>
-              <v-col
-                cols="12"
-                sm="10"
-                md="5"
-                lg="3"
-                xl="3"
-                class="d-flex justify-center align-center mx-auto"
-              >
-                <p class="text-h1 white--text text-center">
-                  <span class="font-weight-black">30</span>+ Years Experience
-                </p>
-              </v-col>
-              <v-col
-                cols="12"
-                sm="10"
-                md="5"
-                lg="6"
-                xl="4"
-                class="mx-auto d-flex align-center px-6"
-              >
-                <p class="mb-1 title white--text font-weight-light">
-                  From large commercial projects to small backyard projects, we
-                  have years of experience to deliver no matter what the size. 
-                  We have done it all, from building schools and homes, to 
-                  small yard projects like landscape walls and concrete floor
-                  polishing. We take pride in our work and love what we do.
-                </p>
-              </v-col>
-            </v-row>
-          </v-overlay>
-        </v-card>
+          <v-row>
+            <v-col cols="6" v-for="item in blueprintImages" :key="item.i">
+              <v-img
+                :aspect-ratio="4 / 3"
+                width="100%"
+                height="100%"
+                :src="item.img"
+              />
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </div>
+
+    <v-row class="grey lighten-2 pa-10">
+      <v-col cols="9" class="mx-auto px-0">
+        <h2 class="display-1 text-center">ABOUT US</h2>
+        <p class="title font-weight-light mt-5">{{about}}</p>
       </v-col>
     </v-row>
 
-    <v-row>
-      <v-col>
-        <Areas />
-      </v-col>
-    </v-row>
-
-    <v-row class="mt-12">
-      <v-col cols="12" sm="12" md="6" class="px-0 pb-0">
-        <Location class="py-0" />
-      </v-col>
-      <v-col cols="12" sm="12" md="6" class="px-0 pb-0">
-        <v-card
-          flat
-          :color="$store.state.blue"
-          tile
-          dark
-          width="100%"
-          height="100%"
-          class="d-flex flex-column justify-center align-center mb-0"
-        >
-          <p class="headline tel">
-            Phone:<a href="tel:801-647-1003"> (801) 647-1003</a>
-          </p>
-          <p class="headline">Email: contact@katcoutah.com</p>
-          <p class="headline">
-            Address: 2624 N 1550 W Pleasant Grove, UT 84003
-          </p>
-        </v-card>
+    <v-row class="px-0 justify-center">
+      <v-col class="contain mx-0 px-0">
+        <Reviews />
       </v-col>
     </v-row>
   </v-container>
@@ -117,60 +106,87 @@
 <script>
 // @ is an alias to /src
 import WorkCards from "../components/WorkCards";
-import Location from "../components/Location";
-import Areas from "../components/Areas";
+import Reviews from "../components/Reviews";
 
 export default {
   name: "Home",
   components: {
     WorkCards,
-    Location,
-    Areas,
+    Reviews,
   },
   data() {
     return {
       mobile: false,
+      about: `We have 40+ years of experience from all walks of life, including simple remodels to large multi 
+      million dollar projects, manufacturing to large industrial plants. We come with outside the box thinking if needed with fresh 
+      ideas and design when needed to solve small problems or complex problems. With each of our projects we have come up with unique 
+      ideas to save time, money and design that make our clients go from frustrated with typical design to excited about change.`,
+      images: [
+        {
+          image:
+            "https://images.pexels.com/photos/534228/pexels-photo-534228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+          title: "Construction Services",
+          subtitle: "Residential and Commercial",
+          opacity: 0.9,
+          overlay: 0.3,
+        },
+        {
+          image: "http://images.coberapps.com/Carousel/excavation.jpg",
+          title: "Excavation",
+          subtitle: "Residential and Commercial",
+          opacity: 1,
+          overlay: 0.1,
+        },
+        {
+          image: "http://images.coberapps.com/woodlandhills7.jpg",
+          title: "Landscaping",
+          subtitle: "Concrete and Rock Walls",
+          subcolor: "white",
+          opacity: 1,
+          overlay: 0.2,
+        },
+        {
+          image:
+            "https://www.questmarkflooring.com/media/promos/solutions/shipping_area_polish.jpg",
+          title: "Concrete Polishing",
+          subtitle: "Commercial and Residencial",
+          subcolor: "white",
+          opacity: 0.9,
+          overlay: 0.1,
+        },
+      ],
+      blueprintImages: [
+        { img: "http://images.coberapps.com/mangus7.JPG" },
+        { img: "http://images.coberapps.com/GallerySmall/mangus11.jpg" },
+        { img: "http://images.coberapps.com/GallerySmall/avenues1.jpg" },
+        { img: "http://images.coberapps.com/GallerySmall/woodlandhills8.jpg" },
+      ],
     };
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.cta {
-  margin-top: -60px;
-}
-
 .tel a {
   text-decoration: none;
   color: white;
 }
 
-.ex {
-  $grid: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUY1RjdCNkVFOTkyMTFFMjhGMDdFMEEyQjQ0NDQ1RjYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUY1RjdCNkZFOTkyMTFFMjhGMDdFMEEyQjQ0NDQ1RjYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1RjVGN0I2Q0U5OTIxMUUyOEYwN0UwQTJCNDQ0NDVGNiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1RjVGN0I2REU5OTIxMUUyOEYwN0UwQTJCNDQ0NDVGNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgQ7RJEAAABkSURBVHjaYvj//z8DEDtDaRAWpwebEWQpAwODIBC/Z4AA+rAHysdMDAMEWIBYHOp9caiYKJI8zdggi19Cw/8lkiTN2aNBPRrUo0E9GtSjQT0a1KNBPRrUo0E9GtSjQU05GyDAAD0qLnnflqfDAAAAAElFTkSuQmCC");
+.carouselHeader {
+  color: #0094b7;
+  text-shadow: 3px 3px 3px #0000004d;
+}
 
-  $lightBlue: rgba(40, 131, 182, 1);
-  $darkBlue: rgba(8, 70, 136, 1);
+.carouselSubheader {
+  color: #3a3a3a;
+  text-shadow: 3px 3px 3px #0000004d;
+}
 
-  color: white;
+.blueprint {
+  background-image: url("http://images.coberapps.com/Blueprints@2x.jpg");
+}
 
-  background-color: #2883b6;
-  background-image: $grid;
-
-  background-image: $grid,
-    -webkit-radial-gradient(center, ellipse cover, $lightBlue 0%, $darkBlue 100%);
-  background-image: $grid,
-    -moz-radial-gradient(center, ellipse cover, $lightBlue 0%, $darkBlue 100%);
-  background-image: $grid,
-    -o-radial-gradient(center, ellipse cover, $lightBlue 0%, $darkBlue 100%);
-  background-image: $grid,
-    -ms-radial-gradient(center, ellipse cover, $lightBlue 0%, $darkBlue 100%);
-  background-image: $grid,
-    radial-gradient(ellipse at center, $lightBlue 0%, $darkBlue 100%);
-
-  background-repeat: repeat;
-  background-repeat: repeat, no-repeat;
-
-  min-height: 400px;
-  min-width: 100%;
+.contain:first-child {
+  max-width: 1500px;
 }
 </style>
